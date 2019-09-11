@@ -6,7 +6,6 @@ This module is perhaps one the best practical exercises in analysing data in whi
 # Handbooks, web references and articles
  
 # R Programming
-GitHub repository - https://github.com/RRafiee/Data-Analysis-and-Visualisation 
 Shiny - https://rstudio.github.io/shiny/tutorial/#welcome 
 # PCA:
 A step by step explanation of Principal Component Analysis by Zakaria Jaadi; https://towardsdatascience.com/a-step-by-step-explanation-of-principal-component-analysis-b836fb9c97e2 
