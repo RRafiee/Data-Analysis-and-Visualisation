@@ -10,7 +10,7 @@ GitHub repository - https://github.com/RRafiee/Data-Analysis-and-Visualisation
 Shiny - https://rstudio.github.io/shiny/tutorial/#welcome 
 # PCA:
 A step by step explanation of Principal Component Analysis by Zakaria Jaadi; https://towardsdatascience.com/a-step-by-step-explanation-of-principal-component-analysis-b836fb9c97e2 
-Principal Component Analysis by Mark Richardson (2009)
+| Principal Component Analysis by Mark Richardson (2009)
 PCA helps you interpret your data, but it will not always find the important patterns by Jake Lever, Marin Krzywinski & Naomi Altman, Nature Methods 14, pages641–642 (2017); https://www.nature.com/articles/nmeth.4346 
 # NMF:
 Learning the parts of objects by non-negative matrix factorization by Daniel D. Lee & H. Sebastian Seung, Nature volume 401, pages 788–791 (1999); https://www.nature.com/articles/44565 
