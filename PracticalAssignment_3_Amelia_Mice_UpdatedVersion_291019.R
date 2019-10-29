@@ -63,7 +63,7 @@ summary(datasets_models_using_amelia)
 # feature_17      0.009090909
 
 ######################################################################################## 
-# Adding element wise of the complete datasets obtained from amelia
+# Averaging the complete datasets obtained from amelia
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 
 Sum_matrix_2 <- t(datasets_models_using_amelia$imputations[[1]])  # The first complete dataset
