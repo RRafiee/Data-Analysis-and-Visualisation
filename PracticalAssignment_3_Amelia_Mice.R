@@ -168,7 +168,7 @@ max(avg_matrix_elementwise)   # what is the max of element in the final matrix: 
 Final_imputed_dataset_using_mice <- MultipleImputationModeling(Input_dataset)  # Numeric dataset
 Final_imputed_dataset_using_mice <- as.data.frame(t(Final_imputed_dataset_using_mice)) # as dataframe
 # Till here, we have imputed two datasets obtained from Amelia and mice
-# Now, try to compare the result 
+# Now, try to compare the results 
 
 
 ######################################################################################## 
