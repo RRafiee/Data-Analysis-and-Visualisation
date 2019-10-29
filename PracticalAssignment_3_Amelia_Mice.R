@@ -175,6 +175,8 @@ Final_imputed_dataset_using_mice <- MultipleImputationModeling(Input_dataset)  #
 Final_imputed_dataset_using_mice <- as.data.frame(t(Final_imputed_dataset_using_mice)) # as dataframe
 # Till here, we have imputed two datasets obtained from Amelia and mice
 # Now, try to compare the results 
+# What about the comparing two matrices using the following function matplot(). What do you see from the result? how do you interprete the plot?
+matplot(Final_imputed_dataset_using_mice, Final_imputed_dataset_using_amelia, type="p")
 
 
 ######################################################################################## 
