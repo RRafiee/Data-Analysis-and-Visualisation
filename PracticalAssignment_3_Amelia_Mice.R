@@ -164,7 +164,13 @@ Final_imputed_dataset_using_amelia <- as.data.frame(t(avg_matrix_elementwis_2))
 min(avg_matrix_elementwis_2)  # what is the min of element in the final matrix: -0.1179939
 max(avg_matrix_elementwise)   # what is the max of element in the final matrix: 1.061036
 ######################################################################################## 
-# Call the function for multiple imputation using mice 
+# Imputation using mice package
+NumofIteration <- 5 
+imputated_by_mice <- mice(Input_dataset,m=20, maxit=NumofIteration,seed = 123) 
+Final_imputed_dataset_using_mice <- complete(imputated_by_mice,1)
+#|||||||||||||||||||||||||||||||||||||||||
+# or you could call the follwoing function
+#Call the function for multiple imputation using mice 
 Final_imputed_dataset_using_mice <- MultipleImputationModeling(Input_dataset)  # Numeric dataset
 Final_imputed_dataset_using_mice <- as.data.frame(t(Final_imputed_dataset_using_mice)) # as dataframe
 # Till here, we have imputed two datasets obtained from Amelia and mice
