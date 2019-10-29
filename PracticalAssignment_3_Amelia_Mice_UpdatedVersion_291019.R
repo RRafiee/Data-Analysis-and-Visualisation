@@ -84,7 +84,7 @@ max(avg_matrix_elementwis_2)   # what is the max of element in the final matrix:
 imputated_by_mice <- mice(Input_dataset,m=Number_of_imputation, maxit=Number_of_imputation,seed = 12345) 
 # Now aggregating the complete datasets obtained from mice
 Sum_matrix_3 <- complete(imputated_by_mice,1)   # The first imputed dataset obtained from mice package
-# Adding 
+# Averaging the imputed datasets 
 for (i in 2:Number_of_imputation) { 
   Sum_matrix_3 <- Sum_matrix_3 + complete(imputated_by_mice,i)
 }
