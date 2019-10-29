@@ -166,18 +166,28 @@ max(avg_matrix_elementwise)   # what is the max of element in the final matrix: 
 ######################################################################################## 
 # Imputation using mice package
 NumofIteration <- 5 
-imputated_by_mice <- mice(Input_dataset,m=20, maxit=NumofIteration,seed = 123) 
-Final_imputed_dataset_using_mice <- complete(imputated_by_mice,1)
+Number_of_imputation <- 20
+imputated_by_mice <- mice(Input_dataset,m=Number_of_imputation, maxit=NumofIteration,seed = 12345) 
+
+Sum_matrix_3 <- complete(imputated_by_mice,1)   # The first imputed dataset obtained from mice package
+
+# Adding 
+for (i in 2:Number_of_imputation) { 
+  Sum_matrix_3 <- Sum_matrix_3 + complete(imputated_by_mice,i)
+}
+Sum_matrix_3 <- Sum_matrix_3/Number_of_imputation
+Final_imputed_dataset_using_mice <- as.data.frame(Sum_matrix_3)
+
 #|||||||||||||||||||||||||||||||||||||||||
 # or you could call the follwoing function
-#Call the function for multiple imputation using mice 
+# Call the function for multiple imputation using mice 
 Final_imputed_dataset_using_mice <- MultipleImputationModeling(Input_dataset)  # Numeric dataset
 Final_imputed_dataset_using_mice <- as.data.frame(t(Final_imputed_dataset_using_mice)) # as dataframe
 # Till here, we have imputed two datasets obtained from Amelia and mice
 # Now, try to compare the results 
-# What about comparing the two matrices (completed datasets obtained from mice and Amelia) 
-# using the following function matplot(). What do you see from the result? how do you interpret the plot?
+
 matplot(Final_imputed_dataset_using_mice, Final_imputed_dataset_using_amelia, type="p")
+######################################################################################## 
 
 
 ######################################################################################## 
