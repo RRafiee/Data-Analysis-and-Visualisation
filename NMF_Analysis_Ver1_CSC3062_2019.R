@@ -96,7 +96,7 @@ dev.off()
 #dev.off()
 
 
-# sample clustering from best fit
+# Sample clustering from the best fit
 plot(silhouette(Res_MultiRank$fit[[idx_cophen_max]]))
 par(mfrow=c(2,2))
 consensusmap(Res_MultiRank, annCol=NA, labCol=NA, labRow=NA, info=F)
