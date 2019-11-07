@@ -102,5 +102,29 @@ par(mfrow=c(2,2))
 consensusmap(Res_MultiRank, annCol=NA, labCol=NA, labRow=NA, info=F)
 
 #----------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------- 
+# 4. Run PCA algorithm on the factorisation results (i.e., H matrix) obtained from the NMF analysis
+# --------------------------------------------------------------------------------------- 
+PCA_H_Matrix_Model <- prcomp(t(H_matrix)) # transpose H-matrix (4*220)
+summary(PCA_H_Matrix_Model)
+PCA_H_Matrix_Model$x
 
+#----------------------------------------------------------------------------------------------------
+# 5. Visualise the three main principal component analysis of the H matrix while using 
+# colour information in link with the sample subgroup (each sample name includes a subgroup label).
+# --------------------------------------------------------------------------------------- 
+pca_matrix <- PCA_H_Matrix_Model$x
+samples_names <- row.names(PCA_H_Matrix_Model$x)
+sample_subgroup_matrix <- matrix(unlist(strsplit(as.character(samples_names), "_\\s*(?=[^_]+$)", perl=TRUE)), ncol = 2, byrow = TRUE, dimnames = list(c(), c("Sample", "Subgroup")))
+pca_matrix <- cbind(PCA_H_Matrix_Model$x, "Subgroup"=sample_subgroup_matrix[,2])
+pca_matrix[,"Subgroup"][pca_matrix[,"Subgroup"]==1] <- "blue"
+pca_matrix[,"Subgroup"][pca_matrix[,"Subgroup"]==2] <- "red"
+pca_matrix[,"Subgroup"][pca_matrix[,"Subgroup"]==3] <- "yellow"
+pca_matrix[,"Subgroup"][pca_matrix[,"Subgroup"]==4] <- "green"
+
+# 3D plot
+pca3d(PCA_H_Matrix_Model$x[,1:3],components = c(1,2,3), col=pca_matrix[,"Subgroup"], group = pca_matrix[,"Subgroup"])
+
+# Pair plot
+pairs(PCA_H_Matrix_Model$x, col=pca_matrix[,"Subgroup"])
 
