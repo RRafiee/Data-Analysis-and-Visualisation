@@ -123,8 +123,8 @@ pca_matrix[,"Subgroup"][pca_matrix[,"Subgroup"]==3] <- "yellow"
 pca_matrix[,"Subgroup"][pca_matrix[,"Subgroup"]==4] <- "green"
 
 # 3D plot
-pca3d(PCA_H_Matrix_Model$x[,1:3],components = c(1,2,3), col=pca_matrix[,"Subgroup"], group = pca_matrix[,"Subgroup"])
-
+# pca3d(PCA_H_Matrix_Model$x[,1:3],components = c(1,2,3), col=pca_matrix[,"Subgroup"], group = pca_matrix[,"Subgroup"])
+pca3d(PCA_H_Matrix_Model$x[,1:3],components = c(1,2,3), col=pca_matrix[,"Subgroup"], group = pca_matrix[,"Subgroup"], fancy = F,show.ellipses = T, ellipse.ci = 0.95)
 # Pair plot
 pairs(PCA_H_Matrix_Model$x, col=pca_matrix[,"Subgroup"])
 
