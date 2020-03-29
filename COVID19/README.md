@@ -8,5 +8,7 @@ Symptoms can include:
 3) Shortness of breath
 
 Confirmed Cases and Deaths by Country, Territory, or Conveyance
+
 Coronavirus Cases
+
 Deaths
