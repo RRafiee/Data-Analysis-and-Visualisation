@@ -1,5 +1,5 @@
-# Practical assignment 3
-# Dr Reza Rafiee, 29th Oct. 2019
+# Practical assignment 4
+# Dr Reza Rafiee, Oct. 2020
 # Analysis: multiple imputation modelling using Amelia and mice packages in R
 # The input csv file includes numeric values with some missing data
 # The aim is (but not limited) to the following items:
